@@ -1,7 +1,7 @@
 function compareArrays(arr1, arr2) {
   let result;
 
-  result = (arr1.every((item, i) => item == arr2[i]));
+  result = (arr1.length == arr2.length && arr1.every((item, i) => item === arr2[i]));
 
   return result; // boolean
 }
