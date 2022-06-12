@@ -6,8 +6,8 @@ function solveEquation(a, b, c) {
     arr.push(- b / (2 * a));
   }
   if(d > 0) {
-    arr.push(- b - Math.sqrt(d) / (2 * a)); 
-    arr.push(- b + Math.sqrt(d) / (2 * a));
+    arr.push((- b - Math.sqrt(d)) / (2 * a)); 
+    arr.push((- b + Math.sqrt(d)) / (2 * a));
   }
  // else if(d < 0) {}
   return arr; // array
