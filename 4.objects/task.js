@@ -24,26 +24,24 @@ Student.prototype.addMark = function (mark) {
 
 Student.prototype.addMarks = function (...marks) {
   //ваш код
-  this.marks = [];
-  this.marks.push(Student.prototype.addMark(marks));
+  this.marks = [...marks];
 }
 
 Student.prototype.getAverage = function () {
   //ваш код
-  sum = 0;
-  for (let i = 0; i < this.marks.length; i++) {
-    sum += this.marks[i];
-    if (i == this.marks.length-1) {
-      this.average = sum / this.marks.length;
-    }
-  }  
+  
+  this.average = 0;
+  this.marks.forEach((entry) => {
+  this.average += entry / this.marks.length})
+  let average = this.average;
+return average;
 }
 
 Student.prototype.exclude = function (reason) {
-  //ваш код  
+  //ваш код 
   if (this.average < 3) {
     delete this.subject;
     delete this.marks;
-    this.exclude = reason;
+    this.excluded = reason;
   }  
 }

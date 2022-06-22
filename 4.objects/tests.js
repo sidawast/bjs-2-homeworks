@@ -9,7 +9,7 @@ describe("Домашнее задание к занятию 4 «Объекты»
     let student2 = new Student("Buzz", "female", 35);
     student2.setSubject("Geometry");
     student2.addMarks(2,3,2);
-
+    
     it("Установка предмета работает корректно", () => {
       expect(student1.subject).toEqual("Algebra");
       expect(student2.subject).toEqual("Geometry");
