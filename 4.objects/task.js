@@ -31,10 +31,17 @@ Student.prototype.getAverage = function () {
   //ваш код
   
   this.average = 0;
+  let sum = this.marks.reduce(function(sum, current) {
+    return sum + current;
+  });
+
+  return this.average = sum / this.marks.length
+  /*
   this.marks.forEach((entry) => {
   this.average += entry / this.marks.length})
   let average = this.average;
 return average;
+*/
 }
 
 Student.prototype.exclude = function (reason) {
