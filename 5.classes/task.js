@@ -78,15 +78,16 @@ class Library {
     }
     
     giveBookByName(bookName) {
+        let findBook;
         for (let i =0; i < this.books.length; i++) {
-            if (this.books[i].name == bookName) {
-            this.books.splice([i], 1);
-            //console.log(this.books)
-            }
-        }
+            if (this.books[i].name === bookName) {
+                findBook = this.books[i];
+                this.books.splice([i], 1);
+                return findBook;
+            } ;
+        }return null
     }
 }
-
 
 //Задача №3*
 class Student {
@@ -104,7 +105,7 @@ class Student {
                 sum += filter[0].marks[i];
                 if (i == filter[0].marks.length-1) {
                     let index = this.subjects.findIndex(item => item.subjectName == subject);
-                    this.subjects[index].average = sum / filter[0].marks.length;
+                    return this.subjects[index].average = sum / filter[0].marks.length;
                 }
           }
         }
@@ -165,18 +166,23 @@ class Student {
     }
     getAverage() {
         this.subjects.average = 0;
+        let sum = 0;
         
         for (let i = 0; i < this.subjects.length; i++) {
-            this.subjects.average += this.subjects[i].average; 
+            let subject = this.subjects[i].subjectName;
+            this.getAverageBySubject(subject);
+
+            this.subjects.average += this.subjects[i].average ; 
             if (i == this.subjects.length - 1) {
                 this.subjects.average = this.subjects.average / this.subjects.length;
+                return this.subjects.average;
             }
         }
     }
+
     exclude(message) {
     if (this.bagError !== undefined) {
         console.log(message);
-    }       
-        
+        }       
     }
 }
